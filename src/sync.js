@@ -12,7 +12,13 @@ async function getIgnoredRoles(db) {
 }
 
 async function getSyncableRoleNames(sourceGuild, targetGuild, db) {
-  const ignoredRoles = await getIgnoredRoles(db);
+  const defaultIgnoredRoles = ["Developer"];
+  const ignoredRoles = [
+    ...new Set([
+      ...defaultIgnoredRoles,
+      ...(await getIgnoredRoles(db))
+    ])
+  ];
 
   const sourceRoleNames = new Set(
     sourceGuild.roles.cache
