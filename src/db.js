@@ -13,4 +13,9 @@ db.run(
   ["Developer"]
 );
 
+db.run(
+  "INSERT OR IGNORE INTO ignored_roles (role_name) VALUES (?)",
+  ["▬▬▬▬▬▬▬▬▬▬▬▬▬▬"]
+);
+
 module.exports = db;

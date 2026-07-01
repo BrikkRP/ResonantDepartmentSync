@@ -12,7 +12,7 @@ async function getIgnoredRoles(db) {
 }
 
 async function getSyncableRoleNames(sourceGuild, targetGuild, db) {
-  const defaultIgnoredRoles = ["Developer"];
+  const defaultIgnoredRoles = ["Developer", "▬▬▬▬▬▬▬▬▬▬▬▬▬▬"];
   const ignoredRoles = [
     ...new Set([
       ...defaultIgnoredRoles,
